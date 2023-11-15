@@ -17,7 +17,7 @@ N = 2;
 fc = 5.6; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
-acc_filtered = filter(B, A, acc_smoothed);
+acc_filtered = filter(B, A, acc);
 
 % Integral velocity
 velocity = zeros(size(acc_filtered));
