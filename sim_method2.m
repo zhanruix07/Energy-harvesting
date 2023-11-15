@@ -13,8 +13,8 @@ tStep = 0.00004;
 t = 0:tStep:(length(acc)-1)*tStep; 
 
 % Define fitter
-N = 2;
-fc = 5.7; % 截止频率为0.5 Hz
+N = 3;
+fc = 4; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
 acc_filtered = filter(B, A, acc);
@@ -34,17 +34,18 @@ end
 displacement = detrend(displacement) * -1000;
 
 % plot
-% figure;
-% plot(t, acc_filtered);
-% title('Filtered Acceleration-simpson');
-% figure;
-% plot(t, velocity);
-% title('Velocity-simpson');
 figure;
-subplot(1,2,1)
 plot(t, displacement);
 title('Displacement-simpson');
-subplot(1,2,2)
-% figure;
+figure;
 plot(t,Dis);
 title(['Displacement-Actual']);
+
+% figure;
+% subplot(1,2,1)
+% plot(t, displacement);
+% title('Displacement-simpson');
+% subplot(1,2,2)
+% % figure;
+% plot(t,Dis);
+% title(['Displacement-Actual']);

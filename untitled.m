@@ -6,7 +6,7 @@ Dis = detrend(Dis)
 
 % 假设 acc 是您的加速度数据，t 是对应的时间向量
 % 这里的 tStep 是根据您提供的采样率 25000 Hz 确定的
-tStep = 0.0002; % 时间步长
+tStep = 0.00004; % 时间步长
 fs = 1 / tStep;
 
 t = (0:length(acc)-1) * tStep; % 完整的时间向量

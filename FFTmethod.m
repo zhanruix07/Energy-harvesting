@@ -1,7 +1,7 @@
 clc
 clearvars
 
-T = readtable("railtrack.txt");
+T = readtable("railtrack1.txt");
 acc = T{:, 2};
 
 % Convert acceleration data from g to m/s^2 and detrend
