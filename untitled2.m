@@ -11,7 +11,7 @@ Dis = detrend(Dis)
 
 tStep = 0.0002;
 t = 0:tStep:(length(acc)-1)*tStep; 
-
+fs = 1/tStep
 % 假设acc是已经加载进来的加速度数据
 p = polyfit(t, acc, 2); % n是多项式的阶数
 trend = polyval(p, t);
