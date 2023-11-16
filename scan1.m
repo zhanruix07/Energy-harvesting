@@ -7,7 +7,7 @@ T = readtable("railtrack1.txt");
 acc = T{:, 2};
 T = readtable("railtrack1.txt");
 Dis = T{:, 3};
-Dis = detrend(Dis)
+Dis = detrend(Dis);
 
 acc = detrend(acc * 9.81);
 
@@ -18,13 +18,13 @@ fs = 1 / tStep; % 采样率
 
 % 循环部分
 % 定义频率范围
-fc_values = 4.0:0.1:5;
+fc_values = 2:0.5:5;
 figureNumber = 1;
 
 % 扫描
 for fc = fc_values
     % Define fitter
-    N = 4;
+    N = 2;
     [B, A] = butter(N, 2*fc/fs, 'high');
     acc_filtered = filter(B, A, acc);
 
