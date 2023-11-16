@@ -2,33 +2,59 @@ clc;
 clearvars;
 
 T = readtable("railtrack1.txt");
-acc = T{:, 2};
+acc1 = T{:, 2};
 T = readtable("railtrack1.txt");
 Dis = T{:, 3};
 Dis = detrend(Dis)
 
+tStep = 0.0002;
+t = 0:tStep:(length(acc1)-1)*tStep; 
+
+%% detrend method 1
+p = polyfit(t, acc1, 2); % n是多项式的阶数
+trend = polyval(p, t);
+acc = acc1 - trend; 
+
+%% detrend method 2
 % acc = detrend(acc * 9.81);
 
-tStep = 0.0002;
-t = 0:tStep:(length(acc)-1)*tStep; 
-
-% 假设acc是已经加载进来的加速度数据
-p = polyfit(t, acc, 2); % n是多项式的阶数
-trend = polyval(p, t);
-acc = acc - trend; % 去除趋势
-
-tStep = 0.0002;
-t = 0:tStep:(length(acc)-1)*tStep; 
-
-
-% Define fitter
+%% Method 1 Fitter
 N = 2;
-fc = 5.6; % 截止频率为0.5 Hz
+fc = 2; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
 acc_filtered = filter(B, A, acc);
 
-% Integral velocity
+%% PLOT ACC
+figure;
+plot(t,acc);
+title('1')
+figure;
+plot(t,acc1);
+title('1')
+
+%% Method 2 moving 
+% window_size = 5; % Number of points in the moving window
+% poly_order = 3;  % The order of the polynomial
+% 
+% % Your data vector 'data'
+% data = acc;
+% 
+% % Initialize the smoothed data vector
+% smoothed_data = zeros(size(data));
+% 
+% % Apply the 5-point 3rd-order smoothing
+% for i = 1:length(data)-(window_size-1)
+%     window_data = data(i:i+(window_size-1));
+%     p = polyfit((1:window_size), window_data, poly_order);
+%     smoothed_data(i) = polyval(p, ceil(window_size/2));
+% end
+% 
+% % Handle the boundaries (you can pad the signal or truncate the smoothed data)
+% acc_filtered = smoothed_data(1:length(data));
+
+
+%% Integral velocity
 velocity = zeros(size(acc_filtered));
 for i = 1:length(acc_filtered)
     velocity(i) = simpson_integration(acc_filtered(1:i), tStep);
