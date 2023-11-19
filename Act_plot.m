@@ -13,9 +13,9 @@ t2 = 0:tStep2:(length(Dis2)-1)*tStep2;
 Dis1 = detrend(Dis1)
 Dis2 = detrend(Dis2)
 figure
-subplot(1,2,1)
+% subplot(1,2,1)
 plot(t1,Dis1);
 title(['Act-Dis1']);
-subplot(1,2,2)
+% subplot(1,2,2)
 plot(t2,Dis2);
 title(['Act-Dis2']);
