@@ -26,14 +26,14 @@ acc = acc1 - trend;
 % acc_filtered = filter(B, A, acc);
 
 %% PLOT ACC
-figure;
-plot(t,acc);
-title('1')
-figure;
-plot(t,acc1);
-title('1')
+% figure;
+% plot(t,acc);
+% title('1')
+% figure;
+% plot(t,acc1);
+% title('1')
 
-% Method 2 moving 
+%% Method 2 moving 
 window_size = 5; % Number of points in the moving window
 poly_order = 3;  % The order of the polynomial
 
