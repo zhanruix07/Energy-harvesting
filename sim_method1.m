@@ -13,8 +13,8 @@ tStep = 0.0002;
 t = 0:tStep:(length(acc)-1)*tStep; 
 
 % Define fitter
-N = 2;
-fc = 5.6 % 截止频率为0.5 Hz
+N = 3;
+fc = 2; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
 acc_filtered = filter(B, A, acc);

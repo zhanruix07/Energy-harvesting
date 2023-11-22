@@ -48,19 +48,19 @@ acc_filtered = filter(B, A, acc);
 % title('Displacement')
 
 figure;
-% subplot(1,4,1);
+subplot(1,4,1);
 plot(t, acc);
 title('acc')
-figure;
-% subplot(1,4,2);
+
+subplot(1,4,2);
 plot(t, acc_detrend);
 title('accdetrend')
-figure;
-% subplot(1,4,3);
+
+subplot(1,4,3);
 plot(t, acc_filtered);
 title('accfiltered ')
-figure;
-% subplot(1,4,4);
+
+subplot(1,4,4);
 plot(t, smoothed_data);
 title('accsmoothed ')
 
