@@ -1,7 +1,7 @@
 clc;
 clearvars;
 
-T = readtable("railtrack1.txt");
+T = readtable("railtrack2.txt");
 acc1 = T{:, 2};
 T = readtable("railtrack1.txt");
 Dis = T{:, 3};
@@ -44,12 +44,6 @@ acc_filtered = smoothed_data(1:length(data));
 
 % 加载加速度数据
 acc = acc_filtered;  % 假设acc_filtered是经过去趋势和滤波后的加速度数据
-
-% 设置采样间隔
-tStep = 0.0002;  % 采样时间间隔
-
-% 生成时间向量
-t = 0:tStep:(length(acc)-1)*tStep; 
 
 % FFT变换加速度数据
 A = fft(acc);

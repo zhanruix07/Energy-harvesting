@@ -14,24 +14,24 @@ Dis = Dis(1:10000)
 tStep = 0.0002;
 t = 0:tStep:(length(acc1)-1)*tStep; 
 %% detrend method 1
-% p = polyfit(t, acc1, 50); % n是多项式的阶数
-% trend = polyval(p, t);
-% acc = acc1 - trend; 
-
+p = polyfit(t, acc1, 10); % n是多项式的阶数
+trend = polyval(p, t);
+acc1 = acc1 - trend; 
+acc1 = acc1 * 9.8
 %% detrend method 2
 % acc = detrend(acc * 9.81);
 
 %% Moving Average Subtraction:
-windowSize = 1200; % for example
-movingAverage = movmean(acc1, windowSize);
-acc = acc1 - movingAverage;
-acc = detrend(acc * 9.81)
+% windowSize = 1200; % for example
+% movingAverage = movmean(acc1, windowSize);
+% acc = acc1 - movingAverage;
+% acc = detrend(acc * 9.81)
 %% Method 1 Fitter
 N = 2;
-fc = 3; % 截止频率为0.5 Hz
+fc = 4.8; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
-acc_filtered = filter(B, A, acc);
+acc_filtered = filter(B, A, acc1);
 
 % %% PLOT ACC
 % figure;
