@@ -3,7 +3,8 @@ clc;
 clearvars;
 
 T = readtable("railtrack1.txt");
-acc1 = T{:, 2};
+acc = T{:, 2};
+acc1 = detrend(acc)
 T = readtable("railtrack1.txt");
 Dis = T{:, 3};
 Dis = detrend(Dis)
@@ -14,7 +15,7 @@ Dis = Dis(1:10000)
 tStep = 0.0002;
 t = 0:tStep:(length(acc1)-1)*tStep; 
 %% detrend method 1
-p = polyfit(t, acc1, 10); % n是多项式的阶数
+p = polyfit(t, acc1, 8); % n是多项式的阶数
 trend = polyval(p, t);
 acc1 = acc1 - trend; 
 acc1 = acc1 * 9.8
@@ -28,7 +29,7 @@ acc1 = acc1 * 9.8
 % acc = detrend(acc * 9.81)
 %% Method 1 Fitter
 N = 2;
-fc = 4.8; % 截止频率为0.5 Hz
+fc = 4.5; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
 acc_filtered = filter(B, A, acc1);

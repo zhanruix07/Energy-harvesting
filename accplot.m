@@ -37,7 +37,7 @@ smoothed_data = smoothed_data(1:length(data));
 
 %% Method 3 Fitter
 N = 2;
-fc =5.6; % 截止频率为0.5 Hz
+fc =4.8; % 截止频率为0.5 Hz
 fs = 1 / tStep; % 采样率
 [B, A] = butter(N, 2*fc/fs, 'high');
 acc_filtered = filter(B, A, acc);

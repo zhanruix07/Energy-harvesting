@@ -7,15 +7,7 @@ T = readtable("railtrack1.txt");
 Dis = T{:, 3};
 Dis = detrend(Dis)
 
-% acc = detrend(acc * 9.81);
-
-tStep = 0.0002;
-t = 0:tStep:(length(acc)-1)*tStep; 
-
-% 假设acc是已经加载进来的加速度数据
-p = polyfit(t, acc, 2); % n是多项式的阶数
-trend = polyval(p, t);
-acc = acc - trend; % 去除趋势
+acc = detrend(acc * 9.81);
 
 tStep = 0.0002;
 t = 0:tStep:(length(acc)-1)*tStep; 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  23 NOV 2023 19:30
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  30 NOV 2023 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,79 +830,6 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip89
 \subfig@bottom=\skip90
 ))
-
-! Package fontspec Error: The font "Arial" cannot be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.2 \input{Misc/preamble.tex}
-                             
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-! Package fontspec Error: The font "Arial" cannot be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.2 \input{Misc/preamble.tex}
-                             
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-! Package fontspec Error: The font "Arial" cannot be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.2 \input{Misc/preamble.tex}
-                             
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-Package fontspec Info: Font family 'Arial(0)' created for font 'Arial' with
-(fontspec)             options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,SmallCapsFeatures={RawFeature = +pcap,
-(fontspec)             },RawFeature=-ss05,Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[Arial.otf]/OT"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[Arial.otf]/OT"
-
-LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 2.
-! Font TU/Arial(0)/m/n/10.95=[Arial.otf]/OT at 10.95pt not loadable: Metric (TF
-M) file or installed font not found.
-<to be read again> 
-                   relax 
-l.2 \input{Misc/preamble.tex}
-                             
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
 (c:/texlive/2023/texmf-dist/tex/latex/newtx/TeXGyreTermesX.fontspec)
 
 Package fontspec Info: Font family 'TeXGyreTermesX(0)' created for font
@@ -1057,12 +984,12 @@ Package rerunfilecheck Info: File `mcmthesis-2023.out' has not changed.
 (rerunfilecheck)             Checksum: 9814C2D956916ADB9290ECA4E25C967A;103.
  ) 
 Here is how much of TeX's memory you used:
- 18417 strings out of 475160
- 338925 string characters out of 5770264
+ 18409 strings out of 475161
+ 338766 string characters out of 5770285
  1915674 words of memory out of 5000000
- 39828 multiletter control sequences out of 15000+600000
+ 39820 multiletter control sequences out of 15000+600000
  562213 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,110p,551b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,110p,551b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on mcmthesis-2023.pdf (1 page).
