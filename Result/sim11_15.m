@@ -1,15 +1,15 @@
 clc;
 clearvars;
 
-T = readtable("railtrack1.txt");
+T = readtable("railtrack2.txt");
 acc = T{:, 2};
-T = readtable("railtrack1.txt");
+T = readtable("railtrack2.txt");
 Dis = T{:, 3};
 Dis = detrend(Dis)
 
 acc = detrend(acc * 9.81);
 
-tStep = 0.0002;
+tStep = 0.00004;
 t = 0:tStep:(length(acc)-1)*tStep; 
 
 
@@ -32,7 +32,7 @@ displacement = zeros(size(velocity));
 for i = 1:length(velocity)
     displacement(i) = simpson_integration(velocity(1:i), tStep);
 end
-displacement = detrend(displacement) * 1000;
+displacement = detrend(displacement) * -1000;
 
 % plot
 % figure;
